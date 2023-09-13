@@ -1,7 +1,8 @@
-<h1>Hello | Hola | Hoi, Theophilus Paintsil</h1>
-<h3>A passionate frontend developer from Ghana</h3>
+<h1 align="left">Hello | Hola | Hoi, Theophilus Paintsil</h1>
+<h3 align="left">A passionate frontend developer from Ghana</h3>
 
-- 📫 How to reach me **tpaintsil@live.com**
+- 📫 Email: **tpaintsil@live.com**
+- 📱 Phone: **+233241852603**
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
