@@ -1,4 +1,4 @@
-<h1 align="left">Hello | Hola | Hoi, Theophilus Paintsil</h1>
+<h1 align="left">Hello | Hola | Hoi, I am Theophilus Paintsil</h1>
 <h3 align="left">A passionate frontend developer from Ghana</h3>
 
 - 📫 Email: **tpaintsil@live.com**
