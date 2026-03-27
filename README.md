@@ -26,12 +26,28 @@ I focus on building systems that are stable, maintainable, and built to perform 
 
 ## 🧰 Core Stack
 
+### Frontend
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=react,nextjs,ts,nodejs,nestjs,docker,aws" />
+  <img src="https://skillicons.dev/icons?i=react,nextjs,ts,flutter" />
+</p>
+
+### Backend
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=nodejs,nestjs" />
+</p>
+
+### Data & Messaging
+<p align="center">
+  <b>MySQL • MongoDB • Redis • BullMQ</b>
+</p>
+
+### Infrastructure & DevOps
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=docker,azure" />
 </p>
 
 <p align="center">
-  <b>React • Next.js • TypeScript • Node.js • NestJS • Docker • Cloud • AI</b>
+  <b>CapRover • ArgoCD • Helm • Servers</b>
 </p>
 
 ---
