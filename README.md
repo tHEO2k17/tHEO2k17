@@ -230,29 +230,118 @@ role=Head of Technical Delivery
 > Discipline compounds results
 ```
 
-## graph architecture --ascii
+## graph architecture --system-design
 
 ```text
-Users
-  |
-Frontend (Next.js / React / Flutter)
-  |
-API / Services (NestJS / .NET)
-  |
-Queues / Events (Redis / Kafka-style workflows)
-  |
-Data (PostgreSQL / MySQL / MongoDB)
-  |
-Infra (Docker / Kubernetes / CI/CD / Cloud)
+                                      ┌──────────────────────────────┐
+                                      │            Users             │
+                                      │   Web • Mobile • Clients     │
+                                      └──────────────┬───────────────┘
+                                                     │
+            ┌────────────────────────────────────────┼────────────────────────────────────────┐
+            │                                        │                                        │
+            ▼                                        ▼                                        ▼
+
+┌────────────────────────────┐        ┌────────────────────────────┐        ┌────────────────────────────┐
+│       Web Frontend         │        │        Mobile App          │        │      External Systems      │
+|                            |        | Android • Java / Kotlin    |        │                            |
+│ React • Next.js            │        │ Flutter • Dart             │        │ GitHub • Payments          │
+│ MVC • MVVM • MVI           │        │ MVVM • MVI                 │        │ 3rd Party APIs • Webhooks  │
+│ SSR • RSC • GraphQL Client │        │ Offline-first patterns     │        │ OAuth Providers            │
+└──────────────┬─────────────┘        └──────────────┬─────────────┘        └──────────────┬─────────────┘
+               │                                     │                                     │
+               └────────────────────┬────────────────┴────────────────┬────────────────────┘
+                                    ▼                                 ▼
+
+                     ┌────────────────────────────────────────────────────────┐
+                     │                 Edge / Delivery Layer                  │
+                     │ API Gateway • Auth • Rate Limiting • Caching           │
+                     │ Input Validation • Security Guards • Request Logging   │
+                     └──────────────────────────┬─────────────────────────────┘
+                                                │
+                     ┌──────────────────────────▼─────────────────────────────┐
+                     │              Service / Interface Layer                 │
+                     │ REST APIs • GraphQL • gRPC                             │
+                     │ BFF patterns • Contracts • Versioning                  │
+                     └──────────────────────────┬─────────────────────────────┘
+                                                │
+                     ┌──────────────────────────▼─────────────────────────────┐
+                     │            Application Layer / Use Cases               │
+                     │ CQRS • Orchestration • Commands • Queries              │
+                     │ DTOs • Validation • Transactions                       │
+                     └──────────────────────────┬─────────────────────────────┘
+                                                │
+                     ┌──────────────────────────▼─────────────────────────────┐
+                     │                 Domain Layer (DDD)                     │
+                     │ Entities • Aggregates • Value Objects                  │
+                     │ Domain Services • Policies • Business Rules            │
+                     └──────────────────────────┬─────────────────────────────┘
+                                                │
+        ┌───────────────────────────────────────▼────────────────────────────────────────┐
+        │                           Infrastructure Layer                                 │
+        │ Repositories • Prisma / ORM • Adapters • Storage • Email • Payments            │
+        │ GitHub Integrations • Webhook Consumers • External Sync Services               │
+        └───────────────────────┬───────────────────────────────┬───────────────────────-┘
+                                │                               │
+                ┌───────────────▼───────────────┐ ┌────────────▼─────────────┐
+                │           Datastores          │ │    Messaging / Workers   │
+                │ PostgreSQL • MySQL • MongoDB  │ │ Redis • Kafka • BullMQ   │
+                │ MariaDB • Caching Layers      │ │ Events • Async Jobs      │
+                └───────────────┬───────────────┘ └────────────┬─────────────┘
+                                │                              │
+                                └──────────────┬───────────────┘
+                                               ▼
+                           ┌────────────────────────────────────────┐
+                           │        Real-time / Collaboration       │
+                           │ WebSockets • Pub/Sub • Presence        │
+                           │ Notifications • Live Sync              │
+                           └───────────────────┬────────────────────┘
+                                               ▼
+                           ┌────────────────────────────────────────┐
+                           │     Quality / Testing / Reliability    │
+                           │ TDD • Unit • Integration • E2E         │
+                           │ Contract Testing • Regression Safety   │
+                           └───────────────────┬────────────────────┘
+                                               ▼
+                           ┌────────────────────────────────────────┐
+                           │       Observability / Operations       │
+                           │ Logs • Metrics • Traces • Sentry       │
+                           │ Grafana • Alerts • Error Tracking      │
+                           └───────────────────┬────────────────────┘
+                                               ▼
+                           ┌────────────────────────────────────────┐
+                           │        DevOps / Platform Layer         │
+                           │ Docker • Kubernetes • CI/CD            │
+                           │ GitHub • GitHub Actions • ArgoCD       │
+                           │ Helm • AWS • Azure • GCP               │
+                           └────────────────────────────────────────┘
 ```
+
 ## badges
 
-![TypeScript](https://img.shields.io/badge/TypeScript-Expert-111111?style=for-the-badge&logo=typescript)
-![React](https://img.shields.io/badge/React-Advanced-111111?style=for-the-badge&logo=react)
-![NestJS](https://img.shields.io/badge/NestJS-Advanced-111111?style=for-the-badge&logo=nestjs)
-![Docker](https://img.shields.io/badge/Docker-Production-111111?style=for-the-badge&logo=docker)
-![AWS](https://img.shields.io/badge/AWS-Cloud-111111?style=for-the-badge&logo=amazonaws)
-![Architecture](https://img.shields.io/badge/System_Architecture-Strong-111111?style=for-the-badge)
+![TypeScript](https://img.shields.io/badge/TypeScript-Expert-0B0F19?style=for-the-badge&logo=typescript)
+![React](https://img.shields.io/badge/React-Advanced-0B0F19?style=for-the-badge&logo=react)
+![Next.js](https://img.shields.io/badge/Next.js-Production-0B0F19?style=for-the-badge&logo=nextdotjs)
+
+![Flutter](https://img.shields.io/badge/Flutter-Cross--Platform-0B0F19?style=for-the-badge&logo=flutter)
+![Dart](https://img.shields.io/badge/Dart-Mobile-0B0F19?style=for-the-badge&logo=dart)
+
+![NestJS](https://img.shields.io/badge/NestJS-Advanced-0B0F19?style=for-the-badge&logo=nestjs)
+![Node.js](https://img.shields.io/badge/Node.js-Backend-0B0F19?style=for-the-badge&logo=node.js)
+![.NET](https://img.shields.io/badge/.NET-Backend-0B0F19?style=for-the-badge&logo=dotnet)
+
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Data-0B0F19?style=for-the-badge&logo=postgresql)
+![Redis](https://img.shields.io/badge/Redis-Caching-0B0F19?style=for-the-badge&logo=redis)
+
+![Docker](https://img.shields.io/badge/Docker-Production-0B0F19?style=for-the-badge&logo=docker)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-Orchestration-0B0F19?style=for-the-badge&logo=kubernetes)
+
+![AWS](https://img.shields.io/badge/AWS-Cloud-0B0F19?style=for-the-badge&logo=amazonaws)
+![Azure](https://img.shields.io/badge/Azure-Cloud-0B0F19?style=for-the-badge&logo=microsoftazure)
+
+![Architecture](https://img.shields.io/badge/System_Design-Strong-0B0F19?style=for-the-badge)
+![DDD](https://img.shields.io/badge/DDD-Practitioner-0B0F19?style=for-the-badge)
+![CQRS](https://img.shields.io/badge/CQRS-Experienced-0B0F19?style=for-the-badge)
 
 ## stats --render
 
